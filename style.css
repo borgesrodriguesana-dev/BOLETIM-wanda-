@@ -1,0 +1,178 @@
+/* Variáveis de cores para facilitar a manutenção */
+:root {
+  --bg-principal: #121214;
+  --bg-card: #202024;
+  --bg-hover: #29292e;
+  --texto-principal: #e1e1e6;
+  --texto-secundario: #a8a8b3;
+  --cor-ciano: #00e5ff;
+  --cor-rosa: #ffb6c1;
+  --cor-atencao: #ff6b6b;
+  --borda-card: #323238;
+}
+
+/* Reset básico e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--cor-ciano);
+  padding: 30px 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cabecalho h1 {
+  color: var(--cor-ciano);
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  color: var(--texto-secundario);
+  font-size: 1rem;
+}
+
+/* Grid de Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-card);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cor-ciano);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cor-ciano);
+}
+
+/* Estilos específicos de cards */
+.card-sucesso .card-valor {
+  color: var(--cor-rosa);
+}
+
+.card-atencao .card-valor {
+  color: var(--cor-atencao);
+}
+
+.card-destaque {
+  border-color: var(--cor-rosa);
+}
+
+.card-legenda {
+  font-size: 0.8rem;
+  color: var(--cor-rosa);
+  display: block;
+  margin-top: 5px;
+}
+
+/* Seção da Tabela */
+.tabela-container {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 25px;
+  border: 1px solid var(--borda-card);
+}
+
+.tabela-container h2 {
+  color: var(--cor-ciano);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* Permite rolagem horizontal em telas pequenas (Celular) */
+.tabela-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--borda-card);
+}
+
+th {
+  background-color: #18181b;
+  color: var(--cor-rosa);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+tr:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Badges de Situação */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge-bom {
+  background-color: rgba(255, 182, 193, 0.15);
+  color: var(--cor-rosa);
+  border: 1px solid var(--cor-rosa);
+}
+
+.badge-atencao {
+  background-color: rgba(255, 107, 107, 0.15);
+  color: var(--cor-atencao);
+  border: 1px solid var(--cor-atencao);
+}
+
+.badge-indisponivel {
+  background-color: rgba(168, 168, 179, 0.15);
+  color: var(--texto-secundario);
+  border: 1px solid var(--texto-secundario);
+}
