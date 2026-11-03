@@ -16,57 +16,100 @@
   </header>
 
   <main class="container">
-    <!-- Seção de Cards de Resumo -->
-    <section class="cards-grid">
-      <div class="card">
-        <h3>Média Geral</h3>
-        <p class="card-valor" id="card-media-geral">—</p>
+    <!-- Seção de Acesso por PIN -->
+    <section id="secao-login" class="tabela-container" style="margin-bottom: 30px;">
+      <h2>Acesso ao Boletim</h2>
+      <p class="subtitulo" style="margin-bottom: 15px;">Turma: <strong>9C</strong> | Chamada: <strong>3</strong></p>
+      <div style="display: flex; gap: 10px; align-items: center; max-width: 300px;">
+        <input type="password" id="input-pin" placeholder="Digite seu PIN" style="padding: 10px; border-radius: 6px; border: 1px solid var(--borda-card); background: var(--bg-principal); color: var(--texto-principal); width: 100%;">
+        <button id="btn-entrar" style="padding: 10px 20px; border-radius: 6px; border: none; background: var(--cor-ciano); color: #000; font-weight: bold; cursor: pointer;">Entrar</button>
       </div>
-
-      <div class="card">
-        <h3>Total de Faltas</h3>
-        <p class="card-valor" id="card-total-faltas">—</p>
-      </div>
-
-      <div class="card card-sucesso">
-        <h3>Bom Desempenho</h3>
-        <p class="card-valor" id="card-bom-desempenho">—</p>
-      </div>
-
-      <div class="card card-atencao">
-        <h3>Precisa de Atenção</h3>
-        <p class="card-valor" id="card-precisa-atencao">—</p>
-      </div>
-
-      <div class="card card-destaque">
-        <h3>Frequência Geral</h3>
-        <p class="card-valor">92%</p>
-        <span class="card-legenda">Frequência adequada</span>
-      </div>
+      <p id="msg-login" style="margin-top: 10px; color: var(--cor-atencao); font-size: 0.9rem;"></p>
     </section>
 
-    <!-- Seção da Tabela do Boletim -->
-    <section class="tabela-container">
-      <h2>Disciplinas e Notas</h2>
-      <div class="tabela-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>1º Tri</th>
-              <th>2º Tri</th>
-              <th>3º Tri</th>
-              <th>Média</th>
-              <th>Faltas</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <tbody id="corpo-tabela">
-            <!-- As 15 disciplinas serão inseridas dinamicamente pelo JavaScript -->
-          </tbody>
-        </table>
+    <!-- Área Principal do Boletim (oculta antes do login) -->
+    <div id="area-boletim" style="display: none;">
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+        <button id="btn-alterar-dados" style="padding: 10px 20px; border-radius: 6px; border: 1px solid var(--cor-ciano); background: transparent; color: var(--cor-ciano); font-weight: bold; cursor: pointer;">Alterar dados</button>
       </div>
-    </section>
+
+      <!-- Seção do Formulário de Edição -->
+      <section id="secao-editor" class="tabela-container" style="display: none; margin-bottom: 30px;">
+        <h2>Editar Notas e Faltas</h2>
+        <div class="tabela-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri (Nota)</th>
+                <th>2º Tri (Nota)</th>
+                <th>3º Tri (Nota)</th>
+                <th>Faltas Tri 1</th>
+                <th>Faltas Tri 2</th>
+                <th>Faltas Tri 3</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-editor"></tbody>
+          </table>
+        </div>
+        <div style="margin-top: 20px; display: flex; gap: 10px; align-items: center;">
+          <button id="btn-salvar" style="padding: 10px 20px; border-radius: 6px; border: none; background: var(--cor-rosa); color: #000; font-weight: bold; cursor: pointer;">Salvar alterações</button>
+          <p id="msg-salvar" style="font-size: 0.9rem;"></p>
+        </div>
+      </section>
+
+      <!-- Seção de Cards de Resumo -->
+      <section class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p class="card-valor" id="card-media-geral">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p class="card-valor" id="card-total-faltas">—</p>
+        </div>
+
+        <div class="card card-sucesso">
+          <h3>Bom Desempenho</h3>
+          <p class="card-valor" id="card-bom-desempenho">—</p>
+        </div>
+
+        <div class="card card-atencao">
+          <h3>Precisa de Atenção</h3>
+          <p class="card-valor" id="card-precisa-atencao">—</p>
+        </div>
+
+        <div class="card card-destaque">
+          <h3>Frequência Geral</h3>
+          <p class="card-valor">92%</p>
+          <span class="card-legenda">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Seção da Tabela do Boletim -->
+      <section class="tabela-container">
+        <h2>Disciplinas e Notas</h2>
+        <div class="tabela-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+              <!-- As disciplinas serão inseridas dinamicamente pelo JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </main>
 
   <script src="script.js"></script>

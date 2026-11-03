@@ -172,7 +172,4 @@ tr:hover {
 }
 
 .badge-indisponivel {
-  background-color: rgba(168, 168, 179, 0.15);
-  color: var(--texto-secundario);
-  border: 1px solid var(--texto-secundario);
-}
+  background-color: rgba(168, 1
