@@ -394,5 +394,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnSalvar) {
     btnSalvar.addEventListener("click", salvarAlteracoes);
-  }
-});
+a
