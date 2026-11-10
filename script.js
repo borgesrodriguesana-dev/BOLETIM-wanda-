@@ -1,4 +1,3 @@
-
 const CONFIG_ALUNO = {
   turma: "9C",
   numeroChamada: 3,
@@ -64,6 +63,8 @@ function validarNotaInput(valorStr) {
 
   const str = valorStr.trim().replace(",", ".");
   if (!/^\d+(\.\d+)?$/.test(str)) {
+    spanBadge.className = `badge ${classeBadge}`;
+    spanBadge.textContent = situacaoTexto;
     return { valido: false };
   }
 
@@ -106,6 +107,8 @@ function renderizarBoletim() {
   dadosDisciplinas.forEach((item) => {
     const t1 = normalizarNota(item.tri1);
     const t2 = normalizarNota(item.tri2);
+    spanBadge.className = `badge ${classeBadge}`;
+    spanBadge.textContent = situacaoTexto;
     const t3 = normalizarNota(item.tri3);
 
     const faltasArray = Array.isArray(item.faltas) ? item.faltas : [0, 0, 0];
@@ -127,6 +130,8 @@ function renderizarBoletim() {
 
     if (media !== null) {
       if (media >= 6.0) {
+    spanBadge.className = `badge ${classeBadge}`;
+    spanBadge.textContent = situacaoTexto;
         situacaoTexto = "Bom desempenho";
         classeBadge = "badge-bom";
         qtdBomDesempenho++;
