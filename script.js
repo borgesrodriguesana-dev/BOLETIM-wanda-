@@ -377,6 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (inputPin) {
     inputPin.addEventListener("keydown", (e) => {
       if (e.key === "Enter") fazerLogin();
+    });
 
 
   if (btnAlterar) {
